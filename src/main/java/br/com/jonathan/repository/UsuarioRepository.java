@@ -1,19 +1,17 @@
 package br.com.jonathan.repository;
 
-import java.util.List;
-
-import org.springframework.data.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import br.com.jonathan.model.UsuarioModel;
 
-public interface UsuarioRepository extends Repository<UsuarioModel, Integer> {
+public interface UsuarioRepository extends JpaRepository<UsuarioModel, Integer> {
 
-	void save(UsuarioModel pessoa);
+	/*void save(UsuarioModel pessoa);
 	
 	void delete(UsuarioModel pessoa);
 	
 	List<UsuarioModel> findAll();
 	
-	UsuarioModel findOne(Integer id);
+	UsuarioModel findOne(Integer id);*/
 	
 }
