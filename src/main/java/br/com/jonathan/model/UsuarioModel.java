@@ -14,6 +14,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -21,10 +22,11 @@ import javax.persistence.TemporalType;
 @Entity
 @Table(name = "USUARIOS")
 public class UsuarioModel {
-
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "id_usuario", length = 8)
+	@Column(name = "id_usuario")
+	@SequenceGenerator(name = "usuario_seq", sequenceName = "usuario_sequence", allocationSize = 1, initialValue = 1)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario_seq")
 	private Integer codigo;
 
 	@Column(name = "nome_usuario", length = 60)
